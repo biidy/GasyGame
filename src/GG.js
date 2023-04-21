@@ -15,6 +15,7 @@ let qst=id("qst");
    const btnlalao=id("btnlalao");
    const btnmoyen =id("btnmoyen");
    const btndiff=id("btndiff");
+   const chx=clas("choix");
     /*function for the btn instruc et help*/
    function unshowbtn ( idt){
     const show = id(idt);
@@ -33,32 +34,43 @@ let qst=id("qst");
     btninstr.style.display='none';
    } 
    /* function for btn antonony */
-    function bntmoyn(){
+    function btnmoyn(){
         btnhelp.style.display='none';
         btnlalao.style.display='none';
         btninstr.style.display='none';
         btndiff.style.display='none';
         btnmoyen.style.display='none';
-        
         rand1();
+        randchx();
+
+    }
+    /* function for btn sarotra*/
+    function btndif(){
+        btnhelp.style.display='none';
+        btnlalao.style.display='none';
+        btninstr.style.display='none';
+        btndiff.style.display='none';
+        btnmoyen.style.display='none';
+
+        rand2();
     }
 
 
 const akammoyen =[
     {
-        suj: "aleveno aho hipody amin'ny vatako taloha ",
+        suj: "Aleveno aho hipody amin'ny vatako taloha ",
     answer:'Katsaka'
     },  
   {
-    suj:"jerena izy menamena,hoanina izy tavi-kena,arina iz chocolat",
+    suj:"Jerena izy menamena,hoanina izy tavi-kena,arina iz chocolat",
     answer:'Letisy'
   },
   {
-    suj:"ilay boka mitaingi-tseza",
+    suj:"Ilay boka mitaingi-tseza",
     answer:'Mananasy',
   },  
   {
-    suj:"lasa aho fa ianao avelako eo",
+    suj:"Lasa aho fa ianao avelako eo",
     answer:'Diatongotra'
   },
     {
@@ -71,15 +83,15 @@ const akammoyen =[
         answer:'lela'
     },
     {
-        suj:"kapaina tsy hita fery",
+        suj:"Kapaina tsy hita fery",
         answer:'rano'
     },
     {
-        suj: "bibilava mifoka sigara",
+        suj: "Bibilava mifoka sigara",
         answer:'Masinina',
     },  
     {
-       suj: "loharano antedronkazo",
+       suj: "Loharano antedronkazo",
         anwer:'voasary'
     },
     {
@@ -87,43 +99,81 @@ const akammoyen =[
         answer:'tohatra',
     },
     {
-        suj:"maty aho fa sady lanin'ny tany no laninn'ny olona",
+        suj:"Maty aho fa sady lanin'ny tany no laninn'ny olona",
         answer:'Tsihy'
     },
     {
-        suj:"soa tsy fangalatra",
+        suj:"Soa tsy fangalatra",
         answer:'vadinolo'
    },
    {
-    suj:"totohina tsy fotsy,avela fotsy ho azy",
+    suj:"Totohina tsy fotsy,avela fotsy ho azy",
     answer:'volo'
    },
    {
-    suj: "ilay mahia mihankin-drindrina",
+    suj: "Ilay mahia mihankin-drindrina",
      answer:'kifafa'
    },
    {
-    suj: "akana vao mitombo",
+    suj: "Akana vao mitombo",
     answer:'aloka'
    }
    
 ]
 
 /* function to rand the suj in the niv moyen*/
-const verbs=[
-    "think",
-    "will go",
-    "are",
-    "did",
-    "eat",
- ];
 function rand1(){
-   
-    let sbj = Math.trunc(Math.random()*(akammoyen.suj));
-    qst.innerText=akammoyen[sbj];
+    const randomIndex = Math.floor(Math.random() * akammoyen.length);
+    const randomQuestion = akammoyen[randomIndex].suj;
+  /*const randomAnswer = akammoyen[randomIndex].answer;*/
+    qst.innerText=randomQuestion;
     console.log(qst.innerHTML);
     
 }
+/*for the btn choose*/
+const choix=[
+    "aloka",
+    "kifafa",
+    "lela",
+    "torimaso",
+    "lela",
+    "volo",
+    "rano",
+    "vadinolo",
+    "fasana",
+    "valala",
+    "tsihy",
+    "voasary",
+    "katsaka",
+    "mananasy",
+    "masinina",
+    "diatongotra",
+    "tohatra",
+
+ ];
+ /*function to rand the btn choix*/
+   const chx1=id("chx1");
+   const chx2=id("chx2");
+   const chx3=id("chx3");
+   const chx4=id("chx4");
+
+ function randchx (){
+    chx1.style.display='block';
+    chx2.style.display='block'; 
+    chx3.style.display='block';
+    chx4.style.display='block';
+
+    const idx1 = Math.trunc(Math.random( )*(choix.length+1));
+    const idx2= Math.trunc(Math.random( )*(choix.length+1));
+    const idx3= Math.trunc(Math.random( )*(choix.length+1));
+    const idx4= Math.trunc(Math.random( )*(choix.length+1));
+
+    chx1.innerText= choix[idx1];
+    chx2.innerText= choix[idx2];
+    chx3.innerText= choix[idx3];
+    chx4.innerText= choix[idx4];
+ }
+
 
 const akamdiff=[
     {
@@ -191,3 +241,14 @@ const akamdiff=[
         answer:'lela'
        }
 ]
+function rand2 (){
+    const randomIndex = Math.floor(Math.random() * akamdiff.length);
+    const randomQuestion = akamdiff[randomIndex].suj;
+  /*const randomAnswer = akammoyen[randomIndex].answer;*/
+    qst.innerText=randomQuestion;
+}
+
+/*funtion to have a score*/
+function score(){
+    
+} 

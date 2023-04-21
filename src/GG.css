@@ -14,7 +14,7 @@ body{
 }
 /*for the buttons*/
 
-#instruction,#help,#btnmoyen,#btndiff{
+#instruction,#help,#btnmoyen,#btndiff,#chx1,#chx2,#chx3,#chx4{
     display: none;
 
 }
@@ -29,8 +29,8 @@ body{
      font-size: 0.9rem;
 }
 #btn{
-    width: 200px;
-    margin: auto;
+  width: 200px;
+  margin: auto;
 }
 button{
     width: 100px;
@@ -39,10 +39,24 @@ button{
     border-radius: 5px;
 
 }
+.choix{
+  width: 200px;
+  margin: auto;
+}
+.choix button{
+  width: 150px;
+  height: 60px;
+  border: 2px solid tomato;
+  border-radius: 10px;
+}
+
 /*for the sabject*/
 .suj{
-    width:200px;
+    width:300px;
     margin:auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.3rem;
+    color:green;
 }
 
 
