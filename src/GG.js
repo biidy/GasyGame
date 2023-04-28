@@ -6,9 +6,17 @@
  function clas (elem){
       return document.getElementsByClassName(elem);
  }
+/*function for the display block and display none*/
+ function none(BTN){
+    BTN.style.display='none';
+}
+
+function block(ELE){
+    ELE.style.display='block';
+}
+/*var header of question*/
 const tete="Inona ary zany";
 let qst=id("qst");
-/*tete.style.color='green';*/
 /*for the button and their functions */
    const btninstr= id("btninstr");
    const btnhelp=id("btnhelp");
@@ -16,43 +24,65 @@ let qst=id("qst");
    const btnmoyen =id("btnmoyen");
    const btndiff=id("btndiff");
    const chx=clas("choix");
+   const afapo =id("btnafapo");
+   const btnakm=id("btnakam");
+   const prev=id("prev");
     /*function for the btn instruc et help*/
    function unshowbtn ( idt){
     const show = id(idt);
-    show.style.display='block';
-    btnhelp.style.display='none';
-    btnlalao.style.display='none';
-    btninstr.style.display='none';
+    block(show);
+    none(btnhelp);
+    none(btnlalao);
+    none(btninstr);
+
    }
 
    /*function for the btn hilalao*/
    function hilalao (){
-       btnmoyen.style.display='block';
-       btndiff.style.display='block';
-       btnhelp.style.display='none';
-    btnlalao.style.display='none';
-    btninstr.style.display='none';
+       block(btnmoyen);
+       block(btndiff);
+       block(btnhelp);
+       none(btnlalao);
+        none(btninstr);
+
    } 
+   let ipt = id("input");
+   
    /* function for btn antonony */
+   var niv =0;
     function btnmoyn(){
-        btnhelp.style.display='none';
-        btnlalao.style.display='none';
-        btninstr.style.display='none';
-        btndiff.style.display='none';
-        btnmoyen.style.display='none';
+        none(btnhelp);
+       none(btnlalao) ;
+        none(btninstr);
+        none(btndiff);
+        none(btnmoyen);
+        block(ipt);
+        block(afapo);
+        block(btnakm);
+        block(prev);
+        block(qst);
+
         rand1();
         randchx();
+        niv=1
+        return niv;
 
     }
     /* function for btn sarotra*/
     function btndif(){
-        btnhelp.style.display='none';
-        btnlalao.style.display='none';
-        btninstr.style.display='none';
-        btndiff.style.display='none';
-        btnmoyen.style.display='none';
-
+        none(btnhelp);
+        none(btnlalao);
+        none(btninstr);
+        none(btndiff);
+        none(btnmoyen);
+        block(ipt);
+        block(afapo);
+        block(btnakm);
+        block(prev);
+        block(qst);
         rand2();
+        niv=2;
+        return niv;
     }
 
 
@@ -121,13 +151,18 @@ const akammoyen =[
    
 ]
 
+
 /* function to rand the suj in the niv moyen*/
+var indice1;
 function rand1(){
     const randomIndex = Math.floor(Math.random() * akammoyen.length);
     const randomQuestion = akammoyen[randomIndex].suj;
   /*const randomAnswer = akammoyen[randomIndex].answer;*/
-    qst.innerText=randomQuestion;
+    qst.innerText= tete +": " + randomQuestion;
     console.log(qst.innerHTML);
+    indice1=randomIndex;
+    
+    
     
 }
 /*for the btn choose*/
@@ -194,7 +229,7 @@ const akamdiff=[
        },
        {
         suj: "Izy efa-dahy milanja ,kotokely mikapoka lalitra,ingiahyNdriana ery ampiandrianana",
-        answer:'Omby'
+        answer:'omby'
        },
        {
         suj: "Any antsaha no mamela-pandrika ka ny any an-tanana no voa",
@@ -214,7 +249,7 @@ const akamdiff=[
        },
        {
         suj: "alina izy tonga tsy nagalarina ,atoandro very tsy nangalarina ",
-        answer:'Kintana'
+        answer:'kintana'
        },
        {
         suj: "Andrahoin-tsy masaka ,atono mora foana",
@@ -222,33 +257,115 @@ const akamdiff=[
        },
        {
         suj: "vakiana ny vatam-paty,esorina ny lamba mena ,vao tsakoy fa hitera-menaka",
-        answer:'Voanjo'
+        answer:'voanjo'
        },
        {
         suj: "ny maty no milanja ny velona",
-        answer:'Farafara'
+        answer:'farafara'
        },
        {
         suj: "Tsy atsipy tsy atoraka nefa mahatonga lavitra",
-        answer:'Eritreritra'
+        answer:'eritreritra'
        },
        {
         suj: "Tsy atoraka tsy avily nefa mahatonga lavitra",
-        answer:'Maso'
+        answer:'maso'
        },
        {
         suj: "Ilay kely monina antrano vato",
         answer:'lela'
        }
 ]
+var indice2;
 function rand2 (){
     const randomIndex = Math.floor(Math.random() * akamdiff.length);
     const randomQuestion = akamdiff[randomIndex].suj;
   /*const randomAnswer = akammoyen[randomIndex].answer;*/
-    qst.innerText=randomQuestion;
+    qst.innerText= tete +":  " + randomQuestion;
+    indice2=randomIndex;
+
+    
 }
 
 /*funtion to have a score*/
-function score(){
+var scr=0;
+function score(idx,akam){
+    let ipt = id("input");
+    if(ipt.value==akam[idx].answer);
     
+    scr++;  
+    console.log(scr);  
 } 
+/*function to the button akamantatra*/
+function btnakam (){
+    if(niv==1){
+        rand1();
+     score(indice1,akammoyen);
+     randchx();
+    }
+    else if(niv==2){
+        rand2()
+        score(indice2,akamdiff);
+    }
+    block(afapo);
+    block(ipt);
+    ipt.value="";
+    rep.innerText="";
+    
+}
+/*function for the button afapo*/
+function btnafapo (){
+    let rep =id("rep");
+    if(niv==1){
+    
+     rep.innerText=akammoyen[indice1].answer;
+    }
+    else if(niv==2){
+        rep.innerText=akamdiff[indice2].answer;   
+    }
+    block(rep);
+   none(afapo);
+   none(ipt) ;
+}
+/*function for the btn isa in the help and the btn help*/
+const btnisa=id("isa");
+function isa (){
+       let p1= id("p1");
+       p1.innerText=scr;
+      none(btnisa);
+
+}
+btnhelp.addEventListener('click',(e)=>{
+    e.preventDefault();
+    none(btnmoyen);
+    none(btndiff);
+
+})
+const instr =id("instruction");
+const hlp =id("help");
+function close1(){
+    block(btnlalao);
+    block(btninstr);
+    none(instr);
+
+}
+function close2 (){
+    block(btndiff);
+    block(btnmoyen);
+    block(btnhelp);
+    none(hlp);
+}
+/*function for the button prev*/
+function fprev (){
+    block(btndiff);
+    block(btnmoyen);
+    block(btnhelp);
+    none(ipt);
+    none(btnakm);
+    none(afapo);
+    none(qst);
+    none(chx1);none(chx2);none(chx3);none(chx4);
+    none(hlp);
+    none(rep);
+    none(prev);
+}

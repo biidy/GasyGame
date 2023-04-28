@@ -38,20 +38,24 @@
     </header>
     <section id="bodysection">
     <div id="elemcenter">
-      <div >
+      <div id="instruction" >
+         <div class="navkel"><button class="close" id="close1" onclick="close1()"  >X</button></div>
         
-           <p id="instruction">
-              Potsiro ny botton hilalao rah hanomboka n lalao akamantatra ianao
+           <p >
+              Potsiro ny bokotra hilalao rah hanomboka n lalao akamantatra ianao
               Misafidiana akamantatra iray amin'ny alalan'ny fipotsirana ilay 
-              botton <span>akamantra</span>.ary fenoy ilay valiny alohan'ny 
-              hijerenao ilay valiny marina amin'ny alalan'ny fipotsirana n boutton 
-              <span>Afapo</span>
+              bokotra<span class="bokotra">akamantra</span>.ary fenoy ilay valiny alohan'ny 
+              hijerenao ilay valiny marina amin'ny alalan'ny fipotsirana ny bokotra
+              <span class="bokotra">Afapo</span>
            </p>
        </div>
-       <div >
-           <p  id="help">
-
+       <div id="help" >
+        <div class="navkel"><button class="close" id="close2" onclick="close2()" >X</button></div>
+           <p  id="p1">
+              potsiro ny bokotra <span class="bokotra">Isa</span> raha te hafantatra ny isa
+              azonao ianao.
            </p>
+           <button id="isa" onclick="isa()" >Isa</button>
        </div>
        <div class="suj">
             <p id="qst"> </p>
@@ -62,6 +66,7 @@
             <button id="btnlalao" onclick="hilalao()" >Hilalao</button>
             <button id="btnmoyen" onclick="btnmoyn()">Antonony</button>
             <button id="btndiff" onclick="btndif()">Sarotra</button>
+            
 
        </div>
        <div >
@@ -78,15 +83,23 @@
        </div>
        <div >
               <input id="input" type="text" placeholder="valiny">
+              <button id="btnafapo" onclick="btnafapo()">Afapo</button>
+              <button id="btnakam" onclick="btnakam()">Akamantatra</button>
+              <p id="rep"></p>
        </div>
+       <!--for the buttons next and prev-->
+   <div class="nextprev">
+    <button id="prev" onclick="fprev()"> <</button>
+</div>
    </div>
+   
   </section> 
    <footer>
     <div class="footer-left">
       <h3 class="name">Akamantatra<span class="team"> Malagasy</span></h3>
 
       <div class="footer-links">
-        <a href="/index.html" class="link-1">Home</a>
+        <a href="/index.html" class="link-1">Fandraisana</a>
         <p>|</p>
         <a href="#">Mpamorona</a>
       </div>

@@ -1,23 +1,39 @@
- 
 body{
-    background-color: ;
+  background-color: wheat;
+  
+} 
+
+#bodysection{
+    background-image: url(../assets/img1.jpg);
+    
+
 }
 
 #elemcenter{
+  background-color:wheat;
     border:3px solid  #00adb5;
     border-radius: 10px;
     width: 500px;
-    height: 16rem;
+    height: 19rem;
     margin: auto;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
+    opacity: 0.8;
+    
 
+}
+.bokotra{
+  color:#222831;
+  font-weight: bold;
 }
 /*for the buttons*/
 
-#instruction,#help,#btnmoyen,#btndiff,#chx1,#chx2,#chx3,#chx4{
+#instruction,#help,#btnmoyen,#btndiff,#chx1,
+#chx2,#chx3,#chx4,#input,#btnafapo,#btnakam,#btnhelp,#prev{
     display: none;
 
 }
+/*for the instruction and the help element*/
+
 #instruction{
      border: 2px solid orangered;
      border-radius: 5px;
@@ -27,27 +43,144 @@ body{
      margin-top: 3%;
      font-family: 'Courier New', Courier, monospace;
      font-size: 0.9rem;
+     background-color: #EEEEEE;
+}
+#help{
+  border: 2px solid orangered;
+     border-radius: 5px;
+     width: 200px;
+     margin: auto;
+     color:#00adb5;
+     margin-top: 3%;
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 0.9rem;
+}
+.navkel{
+  width: 200px;
+  height: 20px;
+  background-color:#00adb5;
+
+}
+.close{
+   width: 50px;
+   height: 20px;
+   background-color:red;
+   padding-left: 0%;
+   align-items: right;
 }
 #btn{
   width: 200px;
   margin: auto;
 }
+/*btn qui se montrent premierement*/
+#btnlalao,#btninstr{
+  width:200px;
+  height: 60px;
+  border-radius: 20px;
+  color: #00adb5;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+}
+#btninstr{
+  margin-top: 7%;
+  background-color: #393E46;
+  font-weight: 300px;
+}
+#btnlalao{
+  margin-top: 9%;
+  background-color: tomato;
+  font-weight: 300px;
+  color: #eee;
+}
+/*btn niveau*/
+#btnmoyen,#btndiff,#btnhelp{
+  width:200px;
+  height: 60px;
+  border-radius: 20px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
+}
+#btnmoyen{
+  margin-top: 5%;
+  background-color: #00adb5;
+  color: #eee;
+}
+#btndiff{
+  margin-top: 7%;
+  background-color: tomato;
+  color: #eee;
+}
+#btnhelp{
+  margin-top: 9%;
+  background-color: #222831;
+  color: #eee;
+}
+
 button{
-    width: 100px;
-    height: 3rem;
+    width: 80px;
+    height: 1.5rem;
     border: 2px solid  #222831 ;
     border-radius: 5px;
 
 }
 .choix{
-  width: 200px;
+  width: 100px;
   margin: auto;
 }
 .choix button{
-  width: 150px;
-  height: 60px;
+  width: 100px;
+  height: 40px;
   border: 2px solid tomato;
   border-radius: 10px;
+  background-color: #393E46;
+  color: #c6c6c6;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 400;
+
+}/*for the button afapo*/
+#btnafapo,#btnakam,#isa{
+  margin: auto;
+  width: 100px;
+  height: 25px;
+  border-radius: 10px;
+  border: 1px solid #222831;
+  color:#c6c6c6;
+  font-family:'Courier New', Courier, monospace;
+  font-weight: 700;
+
+}
+#isa{
+  width:100px ;
+  margin: auto;
+  background-color: #00adb5;
+}
+#btnafapo{
+  margin-top: 2%;
+  background-color: #00adb5;
+}
+#btnakam{
+  margin-top: 2.7%;
+  background-color: orangered;
+}
+
+#rep{
+  color: #00adb5;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  margin: auto;
+  width:90px
+
+}
+/*for botton  prev*/
+#prev{
+  width: 30px;
+  height: 30px;
+  background-color: red;
+  margin-right:auto;
+  align-items: center;
+  position:fixed;
+  
+  
 }
 
 /*for the sabject*/
@@ -55,8 +188,19 @@ button{
     width:300px;
     margin:auto;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 1.3rem;
+    font-size: 1rem;
     color:green;
+    font-weight: 900;
+}
+/* for the input*/
+#input{
+    width: 200px;
+    margin: auto;
+    height: 50px;
+    border: 3px solid green;
+    border-radius: 40px;
+    height: 20px;
+    margin-top: 1%;
 }
 
 
