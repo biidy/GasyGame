@@ -22,3 +22,4 @@
   *CSS
   *JS
   # link of deploiement
+https://euphonious-genie-3bd09a.netlify.app
